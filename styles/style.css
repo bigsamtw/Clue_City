@@ -9,38 +9,38 @@
 #left-heart1{
     width:10%;
     height:10%;
-    margin-top:100;
-    margin-left:60;
+    margin-top:100px;
+    margin-left:60px;
 }
 #left-heart2{
     width:13%;
     height:13%;
-    margin-top:60;
-    margin-left:30;
+    margin-top:60px;
+    margin-left:30px;
 }
 #left-heart3{
     width:16%;
     height:16%;
-    margin-top:10;
-    margin-left:40;
+    margin-top:10px;
+    margin-left:40px;
 }
 #right-heart1{
     width:10%;
     height:10%;
-    margin-top:100;
-    margin-left:210;
+    margin-top:100px;
+    margin-left:210px;
 }
 #right-heart2{
     width:13%;
     height:13%;
-    margin-top:60;
-    margin-left:240;
+    margin-top:60px;
+    margin-left:240px;
 }
 #right-heart3{
     width:16%;
     height:16%;
-    margin-top:10;
-    margin-left:215;
+    margin-top:10px;
+    margin-left:215px;
 }
 .beard{
     position:absolute;
@@ -48,13 +48,13 @@
 }
 #downbeard{
     width:50%;
-    margin-top:203;
-    margin-left:60;
+    margin-top:203px;
+    margin-left:60px;
 }
 #upbeard{
     width:50%;
-    margin-top:190;
-    margin-left:60;
+    margin-top:190px;
+    margin-left:60px;
 }
 
 .star{
@@ -63,27 +63,27 @@
 }
 #leftstar{
     width:25%;
-    margin-left:80;
-    margin-top:120;
+    margin-left:80px;
+    margin-top:120px;
 }
 #rightstar{
     width:25%;
-    margin-left:150;
-    margin-top:120;
+    margin-left:150px;
+    margin-top:120px;
 }
 
 #hat{
     position:absolute;
     z-index:1;
     width:96%;
-    margin-left:4;
+    margin-left:4px;
 }
 #block{
     position:absolute;
     z-index:1;
     background-color:black;
-    margin-left: 75;
-    margin-top:130;
+    margin-left: 75px;
+    margin-top:130px;
     width:47%;
     height:10%;
 }
@@ -91,15 +91,15 @@
     position:absolute;
     z-index: 1;
     width:40%;
-    margin-left:140;
-    margin-top:100;
+    margin-left:140px;
+    margin-top:100px;
 }
 #lip{
     position:absolute;
     z-index: 1;
     width:7%;
-    margin-left:142;
-    margin-top:187;
+    margin-left:142px;
+    margin-top:187px;
 }
 .body_medium{
     float: left;
@@ -111,9 +111,6 @@
     float: left;
     width: 10%;
     height: 100%;
-}
-.header{
-    
 }
 
 #logo{
