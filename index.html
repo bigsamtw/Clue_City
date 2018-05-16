@@ -1,24 +1,596 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Clue City</title>
   <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="semantic/out/semantic.min.css">
 
   <!-- TODO add manifest here -->
   <link rel="manifest" href="/manifest.json">
   <!-- Add to home screen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
   <meta name="apple-mobile-web-app-title" content="Clue City">
   <link rel="apple-touch-icon" href="images/logo.png">
   <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
 </head>
-<body>
-    <h1> Hello world. </h1>
 
+<body>
+  <div class="body_blank"></div>
+  <div class="body_medium">
+    <div class="header">
+      <img id="logo" src="images/logo.png" height="30px">
+      <div class="ui button" id="lines">
+        <img src="images/Lines%20.png" height="30px" width="50px">
+      </div>
+    </div>
+    <div class="about">
+      <h1 id="title">ABOUT US.</h1>
+      <div id="decorate_line"></div>
+      <a id="description">
+        Our team is presented here.
+        <br> We come from different fields.
+        <br> We do what we love.
+        <br>
+      </a>
+    </div>
+
+    <div class="profile">
+      <div class="profile_item" id="image1">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <img class="heart" id="left-heart1" src="images/Left heart .png">
+              <img class="heart" id="left-heart2" src="images/Left heart .png">
+              <img class="heart" id="left-heart3" src="images/Left heart .png">
+              <img class="heart" id="right-heart1" src="images/Right heart .png">
+              <img class="heart" id="right-heart2" src="images/Right heart .png">
+              <img class="heart" id="right-heart3" src="images/Right heart .png">
+              <img id="glenimg" src="images/Profile1.png">
+              <img class="ani-img" id="heartglen" src="images/profile11.png">
+            </div>
+            <div class="content">
+              <div class="header">
+                <p>李致賢 / Glen Lee</p>
+              </div>
+              <div class="meta">
+                <a>Engineer</a>
+              </div>
+              <div class="ui circular icon button" data-variation="very wide" id="1">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_item" id="image2">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <img class="beard" id="downbeard" src="images/Down.png">
+              <img class="beard" id="upbeard" src="images/Up.png">
+              <img id="kennyimg" src="images/Profile2.png">
+              <img class="ani-img" id="kennyani" src="images/profile21.png">
+            </div>
+            <div class="content">
+              <div class="header">
+                <p>王苡丞 / Kenny Wang</p>
+              </div>
+              <div class="meta">
+                <a>Engineer</a>
+              </div>
+              <div class="ui circular icon button" data-variation="very wide" id="2">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_item" id="image3">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <img class="star" id="leftstar" src="images/Star.png">
+              <img class="star" id="rightstar" src="images/Star.png">
+              <img class="ani-img" id="hanani" src="images/profile31.png">
+              <img id="hanimg" src="images/Profile3.png">
+            </div>
+            <div class="content">
+              <div class="header">
+                <p>陳仕翰 / Han Chen</p>
+              </div>
+              <div class="meta">
+                <a>Engineer</a>
+              </div>
+              <div class="ui circular icon button" data-variation="very wide" id="3">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_item" id="image4">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <img id="hat" src="images/Hat.png">
+              <img class="ani-img" id="chiaani" src="images/profile42.png">
+              <img id="chiaimg" src="images/Profile4.png">
+            </div>
+            <div class="content">
+              <div class="header">
+                <p>林志嘉 / Chia Lin</p>
+              </div>
+              <div class="meta">
+                <a>Engineer</a>
+              </div>
+              <div class="ui circular icon button" data-variation="very wide" id="4">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_item" id="image5">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <div class="ani-img" id="block"></div>
+              <img class="ani-img" id="andyani" src="images/profile51.png">
+              <img id="andyimg" src="images/Profile5.png">
+            </div>
+            <div class="content">
+              <div class="header">
+                <p>施緯銘 / Andy Shih</p>
+              </div>
+              <div class="meta">
+                <a>Brain Trust</a>
+              </div>
+              <div class="ui circular icon button" data-variation="very wide" id="5">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_item" id="image6">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <img id="bubble" src="images/Bubble .png">
+              <img class="ani-img" id="lewisani" src="images/profile61.png">
+              <img id="lewisimg" src="images/Profile6.png">
+            </div>
+            <div class="content">
+              <div class="header">
+                <p>黃律幃 / Lewis Huang</p>
+              </div>
+              <div class="meta">
+                <a>Brain Trust</a>
+              </div>
+              <div class="ui circular icon button" data-variation="very wide" id="6">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_item" id="image7">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <img class="ani-img" id="lip" src="images/Lips.png">
+              <img class="ani-img" id="lisaani" src="images/profile71.png">
+              <img id="lisaimg" src="images/Profile7.png">
+            </div>
+            <div class="content">
+              <div class="header">
+                <p>黃馨儀 / Lisa Huang</p>
+              </div>
+              <div class="meta">
+                <a>Designer</a>
+              </div>
+              <div class="ui circular icon button" data-variation="very wide" id="7">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile_item" id="image8">
+        <div class="ui link cards" id="profile_1">
+          <div class="card">
+            <div class="image">
+              <img src="images/profile.png">
+            </div>
+            <div class="content">
+              <div class="header">介紹/introduce</div>
+              <div class="meta">
+                <a>introduce</a>
+              </div>
+              <div class="ui circular icon button" data-variation="basic" id="8">
+                <img src="images/about us2-50.png" class="iconi">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="ui modal" style="float: left">
+
+
+    <div class="ui custom popup top left transition hidden" id="pop_1" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/CCKCLHB.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">李致賢
+          <br>Glen Lee</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: right;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="-webkit-writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;writing-mode: vertical-rl;">吃飯皇帝大</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:glen84910@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/glen.lee.71" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui custom popup top left transition hidden" id="pop_2" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/GQu8Sta.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">王苡丞
+          <br>Kenny Wang</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: right;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="-webkit-writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;writing-mode: vertical-rl;">我真的好帥</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:kenny8654@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/kennykennykennytw?ref=br_rs" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui custom popup top left transition hidden" id="pop_3" style="background-color: #BBBBBB;height: 400px;width:  535px;float: left;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/nRbJSxf.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">陳仕翰
+          <br>Han Chen</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: right;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="-webkit-writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;writing-mode: vertical-rl;">我是大腿我凱瑞</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:bigsamtw@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/bigsamtw?ref=br_rs" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui custom popup top left transition hidden" id="pop_4" style="background-color: #BBBBBB;height: 400px;width:  535px;float: left;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/RymrQ27.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">林志嘉
+          <br>Chia Lin</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: right;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="-webkit-writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;writing-mode: vertical-rl;">好想當米蟲</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:ire33164@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/profile.php?id=100004465479509" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui custom popup top left transition hidden" id="pop_5" style="background-color: #BBBBBB;height: 400px;width:  535px;float: left;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/2uUvX5i.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">施緯銘
+          <br>Andy Shih</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: right;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="-webkit-writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;writing-mode: vertical-rl;">想上台唱歌</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:andy19960418@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/lewis.huang.583" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui custom popup top left transition hidden" id="pop_6" style="background-color: #BBBBBB;height: 400px;width:  535px;float: left;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/gKagKrS.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">黃律幃
+          <br>Lewis Huang</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: right;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="-webkit-writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;writing-mode: vertical-rl;">睡覺是必須的</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:luweilewis@gmail. com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/lewis.huang.583" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui custom popup top left transition hidden" id="pop_7" style="background-color: #BBBBBB;height: 400px;width:  535px;float: left;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/DDOlhRO.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">黃馨儀
+          <br>Lisa Huang</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: right;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="-webkit-writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;writing-mode: vertical-rl;">食物mix睡眠</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:hanhan7777777@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/profile.php?id=100004465479509" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui custom popup top left transition hidden" id="pop_8">
+      <div class="content">
+        <div class="ui centered large image">
+          <img src="images/Intro 8.png">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_1" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;max-width: 535px;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/CCKCLHB.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">李致賢
+          <br>Glen Lee</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: left;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;">吃飯皇帝大</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:glen84910@gmail.com?" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/glen.lee.71" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_2" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/GQu8Sta.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">王苡丞
+          <br>Kenny Wang</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: left;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;">我真的好帥</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:kenny8654@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/kennykennykennytw?ref=br_rs" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_3" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/nRbJSxf.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">陳仕翰
+          <br>Han Chen</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: left;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;">我是大腿我凱瑞</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:bigsamtw@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/bigsamtw?ref=br_rs" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_4" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/RymrQ27.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">林志嘉
+          <br>Chia Lin</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: left;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;">好想當米蟲</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:ire33164@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/profile.php?id=100004465479509" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_5" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/2uUvX5i.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">施緯銘
+          <br>Andy Shih</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: left;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;">想上台唱歌</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:andy19960418@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/lewis.huang.583" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_6" style="background-color: #BBBBBB;height: 400px;width:  535px;float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/gKagKrS.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">黃律幃
+          <br>Lewis Huang</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: left;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;">睡覺是必須的</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:luweilewis@gmail. com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/lewis.huang.583" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_7" style="background-color: #BBBBBB; height: 400px;width:  535px; float: none;visibility: hidden;">
+      <div class="popup_image_content" style="padding: 10px;width: 279px;float: left;">
+        <div class="ui medium image">
+          <img src="https://i.imgur.com/DDOlhRO.jpg">
+        </div>
+        <p class="popup_name" style="color: white;float: none;letter-spacing: 2px;font-weight: 800;margin-top: 20px;font-size: 18;">黃馨儀
+          <br>Lisa Huang</p>
+      </div>
+      <div class="popup_description" style="width: 203px;float: left;line-height: 30px;color: darkgray;letter-spacing: 1px;">
+        <div class="popup_left_decription" style="float: left;margin-top: 10px;">
+          <p class="popup_motto" style="writing-mode: vertical-lr;font-size: 25px;font-weight: 600;letter-spacing: 25px;color: #555;">食物 mix 睡眠</p>
+        </div>
+        <div class="popup_right_decription" style="float: right; width: 70px;margin-top: 45%;margin-right: 5px;">
+          <div class="popup_line" style="float: right;margin-left: 40px; margin-right: 10px;margin-bottom: 10px;height: 25%;width: 3px;background-color: white;"></div>
+          <a class="popup_mail" href="mailto:hanhan7777777@gmail.com" style=" float: right">
+            <img src="https://i.imgur.com/DNVwzDH.png" width="50px">
+          </a>
+          <a class="popup_fb" href="https://www.facebook.com/profile.php?id=100004465479509" style="float: right; margin-top: 10px;">
+            <img src="https://i.imgur.com/7lVjNh5.png" width="50px">
+          </a>
+          <img class="popup_major" src="https://i.imgur.com/YIybfDq.png" width="70px" style=" margin-top: 10px;">
+        </div>
+      </div>
+    </div>
+    <div class="ui modal" id="modal_8">
+      <div class="content">
+        <div class="ui centered large image">
+          <img src="images/Intro 8.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="body_blank"></div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/out/semantic.min.js"></script>
+<script src="scripts/style.js"></script>
+
 </html>
