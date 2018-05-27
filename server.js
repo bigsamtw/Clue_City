@@ -28,7 +28,7 @@ http.createServer(function(req, res) {
     } else {
       res.end('其它提交方式');
     }
-}).listen(3000);
+}).listen(port);
 
 function parseFile (req, res) {
     req.setEncoding('binary');
