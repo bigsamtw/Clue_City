@@ -1,0 +1,23 @@
+{
+  "name": "Clue_City",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigsamtw/Clue_City.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigsamtw/Clue_City/issues"
+  },
+  "homepage": "https://github.com/bigsamtw/Clue_City#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
