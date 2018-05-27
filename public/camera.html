@@ -17,11 +17,18 @@
     <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
     <meta name="msapplication-TileColor" content="#2F3BA2">
   </head>
+  <body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" capture="user">
+      <input type="submit" value="upload">
+    </form>
+    
+  </body>
 
-  <form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="image" accept="image/*" capture="user">
-    <input type="submit" value="upload">
-  </form>
+
 
 </html>
 
