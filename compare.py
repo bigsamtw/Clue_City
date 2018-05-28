@@ -1,8 +1,10 @@
 import numpy as np
 import cv2
+import sys
 from matplotlib import pyplot as plt
-img1 = cv2.imread('1.jpg',0)          # queryImage
-img2 = cv2.imread('2.jpg',0) # trainImage
+
+img1 = cv2.imread('source.jpg',0)          # queryImage
+img2 = cv2.imread('./public/target.jpg',0) # trainImage
 # Initiate SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
 # find the keypoints and descriptors with SIFT
@@ -19,17 +21,20 @@ matchesMask = [[0,0] for i in range(len(matches))]
 # ratio test as per Lowe's paper
 count = 0
 for i,(m,n) in enumerate(matches):
-   if m.distance < 0.7*n.distance:
-       #matchesMask[i]=[1,0]
-       #draw_params = dict( matchColor = (0,255,0),
-       #                    singlePointColor = (255,0,0),
-       #                    matchesMask = matchesMask,
-       #                    flags = 0)
-       count = count + 1
+    if m.distance < 0.7*n.distance:
+        matchesMask[i]=[1,0]
+        draw_params = dict( matchColor = (0,255,0),
+                        singlePointColor = (255,0,0),
+                        matchesMask = matchesMask,
+                        flags = 0)
+        count = count + 1
 if count >= 500:
-    print('similar')
+    print("similar")
+    sys.stdout.flush()
 else:
-    print('not similar')
+    print("not similar")
+    sys.stdout.flush()
+img3 = cv2.drawMatchesKnn(img1,kp1,img2,kp2,matches,None,**draw_params)
+plt.imshow(img3,),plt.show()
 
-#img3 = cv2.drawMatchesKnn(img1,kp1,img2,kp2,matches,None,**draw_params)
-#plt.imshow(img3,),plt.show()
+

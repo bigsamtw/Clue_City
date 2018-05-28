@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/bigsamtw/Clue_City#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "python-shell": "^0.5.0"
   }
 }

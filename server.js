@@ -4,7 +4,8 @@ const port = 10048;
 const http = require('http');
 const fs = require('fs');
 const util = require('util');
-const querystring =require('querystring');
+const querystring = require('querystring');
+const PythonShell = require('python-shell');
 
 app.use(express.static(__dirname + '/public'));
 app.listen(port);
@@ -13,24 +14,23 @@ console.log(`Express server is now listening on IP : http://luffy.ee.ncku.edu.tw
 
 //用http模块创建一个http服务端
 http.createServer(function(req, res) {
-  if (req.url == '/upload' && req.method.toLowerCase() === 'get') {
-    //显示一个用于文件上传的form
-    res.writeHead(200, {'content-type': 'text/html'});
-    res.end(
-      '<form action="/upload" enctype="multipart/form-data" method="post">'+
-        '<input type="file" name="upload" multiple="multiple" />'+
-        '<input type="submit" value="Upload" />'+
-      '</form>'
-    );
-  } else if (req.url == '/upload' && req.method.toLowerCase() === 'post') {
-    if(req.headers['content-type'].indexOf('multipart/form-data')!==-1)
-      parseFile(req, res)
-    } else {
-      res.end('其它提交方式');
+  if (req.url == '/upload' && req.method.toLowerCase() === 'post') {
+    if(req.headers['content-type'].indexOf('multipart/form-data')!==-1){
+      parseFile(req, res, runPython)    
     }
+  }
 }).listen(3000);
 
-function parseFile (req, res) {
+function runPython(){
+  console.log('Python is running')
+  var spawn = require("child_process").spawn;
+  var process = spawn('python3',["./compare.py",]);
+  process.stdout.on('data', function(data){
+    console.log(data.toString());
+  })
+}
+
+function parseFile (req, res, callback){
     req.setEncoding('binary');
     var body = '';   // 文件数据
     var fileName = '';  // 文件名
@@ -50,12 +50,13 @@ function parseFile (req, res) {
         var fileInfo = file['Content-Disposition'].split('; ');
         for (value in fileInfo){
           if (fileInfo[value].indexOf("filename=") != -1){
-            fileName = fileInfo[value].substring(10, fileInfo[value].length-1);
-  
+            //fileName = fileInfo[value].substring(10, fileInfo[value].length-1);
+            fileName = "./public/target.jpg"
             if (fileName.indexOf('\\') != -1){
-              fileName = fileName.substring(fileName.lastIndexOf('\\')+1);
+              //fileName = fileName.substring(fileName.lastIndexOf('\\')+1);
+              fileName = "./public/target.jpg"
             }
-            console.log("文件名: " + fileName);
+            console.log("File Name : " + fileName);
           }
         }
   
@@ -77,10 +78,11 @@ function parseFile (req, res) {
   
         // 保存文件
         fs.writeFile(fileName, binaryData, 'binary', function(err) {
-          res.end('图片上传完成');
+          res.end('Image has been uploaded.');
         });
       } else {
         res.end('只能上传图片文件');
       }
+      callback()
     });
   }
