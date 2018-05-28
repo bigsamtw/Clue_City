@@ -65,7 +65,7 @@ app.post("/upload", urlencoderParser, function (req, res, callback) {
     } else {
       res.end('只能上传图片文件');
     }
-    callback() = runPython;
+    callback = runPython();
   })
 })
 
