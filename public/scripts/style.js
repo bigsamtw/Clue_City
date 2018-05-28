@@ -6,7 +6,7 @@ $(window).resize(function () {
 
 $(document).ready(function () {
     windowResize();
-    $('#submit_button').submit(function (event) {
+    $('#submit_button').click(function (event) {
         event.preventDefault();
         $.ajax({
             url  : '/upload',
