@@ -9,8 +9,10 @@ $(document).ready(function () {
     $('#submit_button').submit(function (event) {
         event.preventDefault();
         $.ajax({
-            url: '/upload',
-            type: 'POST',
+            url  : '/upload',
+            type : 'POST',
+            dataType: 'html',
+            data : $("#upload_form").find("form").serialize(),
             success: function (data) {
                 alert('Email Sent');
             }
