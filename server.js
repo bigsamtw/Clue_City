@@ -60,13 +60,14 @@ app.post("/upload", urlencoderParser, function (req, res, callback) {
 
       // 保存文件
       fs.writeFile(fileName, binaryData, 'binary', function (err) {
-        res.send('Image has been uploaded.');
+        // res.send('Image has been uploaded.');
       });
     } else {
-      res.send('只能上传图片文件');
+      // res.send('只能上传图片文件');
     }
     callback = runPython();
   })
+  res.send('Image has been uploaded.');
 })
 
 // //用http模块创建一个http服务端
