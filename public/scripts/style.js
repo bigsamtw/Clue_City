@@ -6,6 +6,9 @@ $(window).resize(function () {
 
 $(document).ready(function () {
     windowResize();
+    $("#upload_form").submit(function (e) {
+        return false;
+    });
 });
 
 function windowResize() {
