@@ -15,7 +15,7 @@ $(document).ready(function () {
             type : 'post',
             data: formData,
             success: function (data) {
-                $('h1#upload_response').text(data);
+                $('h1#upload_response').text(data.body);
             },
             cache: false,
             contentType: false,
