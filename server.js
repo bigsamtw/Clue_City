@@ -60,10 +60,10 @@ app.post("/upload", urlencoderParser, function (req, res, callback) {
 
       // 保存文件
       fs.writeFile(fileName, binaryData, 'binary', function (err) {
-        res.end('Image has been uploaded.');
+        res.send('Image has been uploaded.');
       });
     } else {
-      res.end('只能上传图片文件');
+      res.send('只能上传图片文件');
     }
     callback = runPython();
   })
