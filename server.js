@@ -6,6 +6,7 @@ const fs = require('fs');
 const util = require('util');
 const querystring = require('querystring');
 const PythonShell = require('python-shell');
+const bodyParser = require('body-parser');
 const urlencoderParser = bodyParser.urlencoded({ extended: false })
 
 app.use(express.static(__dirname + '/public'));
