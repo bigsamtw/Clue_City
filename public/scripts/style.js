@@ -6,8 +6,15 @@ $(window).resize(function () {
 
 $(document).ready(function () {
     windowResize();
-    $("#upload_form").submit(function (e) {
-        return false;
+    $('#submit_button').submit(function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/upload',
+            type: 'POST',
+            success: function (data) {
+                alert('Email Sent');
+            }
+        });
     });
 });
 

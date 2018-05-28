@@ -24,9 +24,11 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <form id = "upload_form" action="http://luffy.ee.ncku.edu.tw:3000/upload" method="post" enctype="multipart/form-data">
+  <form id = "upload_form" 
+        action="/upload" 
+        method="post" enctype="multipart/form-data">
     <input id = "submit_image"type="file" name="image" accept="image/*" capture="user">
-    <input id = "submit_button" type="submit" value="upload">
+    <input id = "submit_button" type="button" value="upload">
   </form>
   <image id="uploaded_image" src="http://luffy.ee.ncku.edu.tw:10048/target.jpg" width="200">
 
