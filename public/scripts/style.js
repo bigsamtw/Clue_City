@@ -6,16 +6,20 @@ $(window).resize(function () {
 
 $(document).ready(function () {
     windowResize();
-    $('#submit_button').click(function (event) {
-        event.preventDefault();
+    $("form#upload_form").submit(function(e) {
+        e.preventDefault();    
         var formData = new FormData(this);
+    
         $.ajax({
             url  : '/upload',
             type : 'post',
             data: formData,
             success: function (data) {
-                alert('Email Sent');
-            }
+                alert(data)
+            },
+            cache: false,
+            contentType: false,
+            processData: false
         });
     });
 });
