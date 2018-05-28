@@ -10,7 +10,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
             url  : '/upload',
-            type : 'POST',
+            type : 'post',
             dataType: 'html',
             data : $("#upload_form").find("form").serialize(),
             success: function (data) {
