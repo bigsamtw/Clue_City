@@ -65,9 +65,8 @@ app.post("/upload", urlencoderParser, function (req, res, callback) {
     } else {
       // res.send('只能上传图片文件');
     }
-    callback = runPython();
+    callback = runPython(res);
   })
-  res.set('Image has been uploaded./n')
 })
 
 // //用http模块创建一个http服务端
@@ -79,12 +78,14 @@ app.post("/upload", urlencoderParser, function (req, res, callback) {
 //   }
 // }).listen(3000);
 
-function runPython() {
+function runPython(res) {
   console.log('Python is running')
   var spawn = require("child_process").spawn;
   var process = spawn('python3', ["./compare.py",]);
   process.stdout.on('data', function (data) {
     console.log(data.toString());
+    res.set('Image has been uploaded./n')
+    res.set(data.toString())
   })
 }
 
