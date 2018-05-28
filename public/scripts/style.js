@@ -8,11 +8,11 @@ $(document).ready(function () {
     windowResize();
     $('#submit_button').click(function (event) {
         event.preventDefault();
+        var formData = new FormData(this);
         $.ajax({
             url  : '/upload',
             type : 'post',
-            dataType: 'html',
-            data : $("#upload_form").find("form").serialize(),
+            data: formData,
             success: function (data) {
                 alert('Email Sent');
             }
