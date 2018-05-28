@@ -84,8 +84,8 @@ function runPython(res) {
   var process = spawn('python3', ["./compare.py",]);
   process.stdout.on('data', function (data) {
     console.log(data.toString());
-    res.set('Image has been uploaded./n')
-    res.set(data.toString())
+    res.set('body','Image has been uploaded./n')
+    res.set('body', data.toString())
   })
 }
 
