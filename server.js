@@ -67,7 +67,7 @@ app.post("/upload", urlencoderParser, function (req, res, callback) {
     }
     callback = runPython();
   })
-  res.send('Image has been uploaded.');
+  res.set('Image has been uploaded./n')
 })
 
 // //用http模块创建一个http服务端
