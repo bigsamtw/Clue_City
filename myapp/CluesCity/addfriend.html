@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>addfriend</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+       crossorigin="anonymous">
+    </script>
+
+  </head>
+  <body>
+      <script>
+
+          window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '177842309598524',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v3.0'
+              });
+                
+              FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });               
+          };
+          
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "https://connect.facebook.net/en_US/sdk.js";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+        
+        
+          
+         function statusChangeCallback(response){
+           if( response.status === 'connected' ){
+             console.log( 'Logged in and authenticated' );
+             setElements(true); 
+             getProfile();
+           } else {
+            console.log( 'Not authenticated' );
+            setElements(false);
+           }
+         }
+        
+        
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+        
+        function setElements(isLogin){
+          if(isLogin){}else{}
+        }
+        
+        function gotoabout_us(){
+          document.location.href="https://luffy.ee.ncku.edu.tw:10047/profile";
+        }
+
+        var responseData  ;
+
+        function getProfile(){
+          FB.api('/me?fields=name,email',function(response){
+            if(response && !response.error){
+              responseData = response ;
+            }
+          })
+        }
+
+        function friend1(){
+          console.log(12344444);
+          let sendto = {"id":"1854028224617790"}; //致賢
+          invite(sendto);
+        }       
+        function friend2(){
+          let sendto = {"id":"2039314459655494"}; //jack
+          invite(sendto);         
+        }       
+        function friend3(){
+          let sendto = {"id":"2054568394572464"}; //仕翰
+          invite(sendto);         
+        }       
+        function friend4(){
+          let sendto = {"id":"994408210718019"}; //志嘉
+          invite(sendto);         
+        }       
+
+
+        function invite(sendto){
+          let sender =  responseData ;
+          let inviteto = sendto.id ;
+          $.ajax ({
+            type : 'post',
+            url : './friend/invite',
+            data : {
+                sender : sender.id,
+                to : inviteto,
+            }
+          });
+        }
+
+        function passtodatabase(){
+            $.ajax({
+                type: 'post',
+                url: './friend/team',
+                data:{
+                  team_id : $("input[name='team_id']").val(),
+                  leader  : responseData.id,
+                }
+            });
+        }
+        
+        
+        var waitsignal = setInterval(checkresponse , 1000);
+        var be_invited = 0;
+        var invite_info = 0;
+        var answer ;
+
+        function checkresponse(){
+
+            $.ajax ({
+              type : 'post',
+              url : './friend/checkresponse',
+              data : {},
+              success : function(data){
+                if( data == "" || data==null){}
+                else{
+                  invite_info = data ;
+                  if( invite_info.checkinvite.accept == "1" ){
+                    join( invite_info.checkinvite.to);
+                  }
+                }
+              }
+          });
+        }
+
+      function join(teammate){
+        $.ajax({
+          method : 'post',
+          url : './friend/teammate',
+          data : {
+            "id" : teammate
+          },
+        });
+      } 
+
+      function gaming(){
+        document.location.href="#"; //待補上
+      } 
+        
+    </script>
+
+
+      team ID: <input type="text" name = "team_id"><br>
+      <button type = "submit" onclick = "passtodatabase()">OK</button>
+      <div>
+        <a id = "name1">李致賢</a>
+        <button type="submit" onclick = "friend1()">邀請</button>
+      </div>
+      <div>
+        <a id = "name2">Jack Huang</a>
+        <button type="submit" onclick = "friend2()">邀請</button>
+      </div>
+      <div>
+        <a id = "name3">陳仕翰</a>
+        <button type="submit" onclick = "friend3()">邀請</button>
+      </div>
+      <div>
+        <a id = "name4">林志嘉</a>
+        <button type="submit" onclick = "friend4()">邀請</button>
+      </div>
+
+      <button onclick = "gaming()">START THE GAME</button>
+
+  </body>
+</html>
