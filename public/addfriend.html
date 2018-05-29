@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Clue City</title>
+  <link rel="stylesheet" type="text/css" href="styles/AddFriendStyle.css">
+  <link rel="stylesheet" type="text/css" href="semantic/out/semantic.min.css">
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-title" content="Clue City">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+    <script>
+    $(document).ready(function(){
+    });
+    </script>
+<body>
+    <img src="images/Team/Background.png" id="TeamBackground">
+    <div class="team">
+        <div class="topbar">
+            <img src="images/Team/WhiteBack.png" id="WhiteBack">
+            <img src="images/Team/adhoc mode.png" class="TopBarMid" id="AdhocMode">
+            <img src="images/Team/wheel.png" class="TopBarWheel" id="Wheel">
+        </div>
+        
+        <div class="FriendsOnline">
+            <img src="images/Team/GrayBack.png" id="GrayBack">
+            <p id="Friendonline">ADD PEOPLE</p>
+            <div id="OnlineList">
+                <p class="Online" id="FriendNum">加入好友</p>
+            </div>
+        </div>
+            <div class="FriendList">
+                <div class="ui search" id="Search">
+                  <div class="ui icon input" id="Search1">
+                    <input class="prompt" type="text" placeholder="Search By Name or ID" id="Search2">
+                    <i class="search icon"></i>
+                  </div>
+                  <div class="results"></div>
+                </div>
+                <div class="ui celled list">
+                <div class="item">
+                  <img class="ui avatar image" src="images/Team/Glen.jpg">
+                  <div class="content">
+                    <div class="header">Glen</div>
+                    <p class="ID">glen84910</p>
+                  </div>
+                    <img class="Add" src="images/Team/Plus.png">
+                </div>
+                <div class="item">
+                  <img class="ui avatar image" src="images/Team/Wang.jpg">
+                  <div class="content">
+                    <div class="header">KennyWang</div>
+                    <p class="ID">HandsomeWang</p>
+                  </div>
+                    <img class="Add" src="images/Team/Plus.png">
+                </div>
+                <div class="item">
+                  <img class="ui avatar image" src="images/Team/HsiHan.jpg">
+                  <div class="content">
+                    <div class="header">HsiHan</div>
+                    <p class="ID">BigLegHan</p>
+                  </div>
+                    <img class="Add" src="images/Team/Plus.png">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id="StartGame">
+                <img src="images/Team/StartTheGame.png" id="StartGameIcon">
+        </div>
+        <div id="Bottom">
+                <img src="images/Mode/home icon.png" class="BottomIcon" id="HomeIcon">
+                <img src="images/Mode/gallery icon.png" class="BottomIcon" id="GalleryIcon">
+                <img src="images/Mode/group icon.png" class="BottomIcon" id="GroupIcon">
+                <img src="images/Mode/leaderboard icon.png" class="BottomIcon" id="RankIcon">
+        </div>
+    </div>
+    
+</body>

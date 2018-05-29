@@ -1,27 +1,31 @@
-.login{
-    background-image: url("/images/Login/background.png");
-    background-size:100%;
+#background{
+    position:absolute;
+    z-index:-1;
+    width: 100%;
+    left:0px;
+    top:0px;
 }
 .login{
-    margin-left:10%;
-    margin-top:10%;
+    margin-left:0%;
+    margin-top:0%;
 }   
 #ClueCity{
-    position:relative;
     width: 90%;
-    height:50%;
-    margin left:60%;
+    height:30%;
+    margin-top:10%;
+    margin-left:5%;
 }
 .loginDes{
     position:relative;
     width:70%;
-    height:20%;
+    height:10%;
     margin-top:5%;
     margin-left:15%;
 }
 #FBlink{
     position:relative;
-    width:90%;
-    height:20%;
-    margin-top:10%;
+    width:80%;
+    height:10%;
+    margin-top:20%;
+    margin-left:10%;
 }

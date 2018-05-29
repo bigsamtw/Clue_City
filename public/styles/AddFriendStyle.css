@@ -1,5 +1,5 @@
 body{
-    overflow: hidden;
+    overflow:hidden;
 }
 #TeamBackground{
     position:absolute;
@@ -17,6 +17,7 @@ body{
     top: 0px;
     background-color:#4c4b4b;
 }
+
 #WhiteBack{
     position:relative;
     width:7%;
@@ -47,28 +48,42 @@ body{
     position:relative;
     display:flex;
     background:white;
+    margin-top:60%;
     width:74%;
     margin-left:14%;
 }
 .Online{
     position:relative;
     font-family: Microsoft JhengHei;
+    margin-top:3%;
     font-weight:600;
     font-size:2.2vw;
 }
 #Friendonline{
     position:relative;
     font-family: Microsoft JhengHei;
-    font-weight:900;
+    font-weight:bolder;
     font-size:3.4vw;
     margin-top:4%;
-    margin-left:3%;
+    margin-left:10%;
+}
+#FriendNum{
+    font-family: Microsoft JhengHei;
+    font-weight:900;
+    margin-top:22%;
+    font-size:3.4vw;
+
 }
 #OnlineList{
     display:flex;
-    background-color:white;
-    margin-top:5%;
-    margin-left:4%;
+    margin-left:2%;
+}
+#GrayBack{
+    position:relative;
+    width:7%;
+    height:7%;
+    margin-top:4%;
+    margin-left:5%
 }
 #Plus{
     position:relative;
@@ -86,13 +101,12 @@ body{
     margin-left:14%;
     background-color:white;
 }
-.OnlineDot{
-    width:4%;
+#Search{
+    margin-left:7%;
 }
-.Invite{
-    position:absolute;
-    right:0px;
-    width:20%;
+#Search2{
+    background-color:white; 
+    height:4vw;
 }
 #StartGame{
     position:relative;
@@ -100,6 +114,12 @@ body{
 }
 #StartGameIcon{
     width: 89%;
+}
+.Add{
+    position:absolute;
+    margin-top:3vw;
+    right:0px;
+    width:6%;
 }
 #Bottom{
     position:absolute;
