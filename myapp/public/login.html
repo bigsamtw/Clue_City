@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Clue City</title>
+  <style media="screen">
+    #fb-btn{margin-top: 20px;}
+  </style>
+  <link rel="stylesheet" type="text/css" href="styles/LoginStyle.css">
+  <link rel="stylesheet" type="text/css" href="semantic/out/semantic.min.css">
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-title" content="Clue City">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+  </script>
+    </head>
+<body>
+        <script>
+        
+                window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '177842309598524',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v3.0'
+              });
+                
+              FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+                
+            };
+          
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "https://connect.facebook.net/en_US/sdk.js";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+        
+        
+          
+         function statusChangeCallback(response){
+           if( response.status === 'connected' ){
+             console.log( 'Logged in and authenticated' );
+             setElements(true);
+             getProfile();
+           } else {
+            console.log( 'Not authenticated' );
+            setElements(false);
+           }
+         }
+        
+        
+        function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+        }
+        
+        function setElements(isLogin){
+          if(isLogin){
+            document.getElementById('fb-btn').style.display = 'none';
+            document.getElementById('start').style.display = 'block';
+          }else{
+            document.getElementById('fb-btn').style.display = 'block';
+            document.getElementById('start').style.display = 'none';
+          }
+        }
+        function getProfile(){
+          FB.api('/me?fields=name,email',function(response){
+            if(response && !response.error){
+              console.log("has get profile");
+            }    
+             PassToMain(response);
+          })
+        }
+        
+        
+        function PassToMain(Data)
+        {
+            $.ajax({
+                type: 'post',
+                url: './login/user',
+                data:Data
+            });
+        }
+        
+        function gotohard(){
+          document.location.href="https://luffy.ee.ncku.edu.tw:10047/hard";
+        }
+        
+        
+        </script>
+
+    <img src="images/Login/background.png" id="background">
+    <div class="login">
+        <img src="images/Login/ClueCity.png" id="ClueCity">
+        <div>
+            <img  src="images/Login/firstdes.png" class="loginDes" id="firstdes" >
+            <img src="images/Login/seconddes.png" class="loginDes" id="seconddes" >
+            <img src="images/Login/thirddes.png" class="loginDes" id="thirddes" >
+            <button id = "start" onclick= "gotohard()" > start </button>
+            <div class="fb-login-button" 
+                id = "fb-btn"
+                data-width="1000" 
+                data-max-rows="1" 
+                data-size="large"
+                data-button-type="login_with"  
+                data-show-faces="false" 
+                data-auto-logout-link="false" 
+                data-use-continue-as="false"
+                scope="public_profile,email"
+                onlogin="checkLoginState();"></div>
+        </div>
+    </div>
+</body>
+</html>
