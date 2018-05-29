@@ -13,9 +13,8 @@ app.use(express.static(__dirname + '/public'));
 app.listen(port);
 console.log(`Express server is now listening on IP : http://luffy.ee.ncku.edu.tw:${port}`)
 
-app.post("./upload_to_node");
 
-app.post("./upload", urlencoderParser, function (req, res) {
+app.post("/upload", urlencoderParser, function (req, res) {
   req.setEncoding('binary');
   var body = '';   // 文件数据
   var fileName = '';  // 文件名

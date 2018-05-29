@@ -6,24 +6,24 @@ $(window).resize(function () {
 
 $(document).ready(function () {
     windowResize();
-    $("form#upload_form").submit(function(e) {
-        e.preventDefault();    
-        var formData = new FormData(this);
-        console.log('post')
-        $.ajax({
-            url  : '/upload',
-            type : 'post',
-            data: formData,
-            dataType : text,
-            success: function (data) {
-                $('#upload_response').text(data);
-            },
-            //cache: false,
-            //contentType: false,
-            //processData: false
-        });
-    });
 });
+
+function onSubmitButtonClicked(){
+  event.preventDefault();
+  var formData = new FormData($('#upload_form')[0]);
+  console.log('post');
+  $.ajax({
+    url : '/upload',
+    type : 'post',
+    data : formData,
+    success : function(data){
+      $('#upload_response').text(data);
+    },
+    cache: false,
+    contentType: false,
+    processData: false,
+  })
+}
 
 function windowResize() {
     if ($(window).width() < 1480) {
