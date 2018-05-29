@@ -1,0 +1,27 @@
+.login{
+    background-image: url("/images/Login/background.png");
+    background-size:100%;
+}
+.login{
+    margin-left:10%;
+    margin-top:10%;
+}   
+#ClueCity{
+    position:relative;
+    width: 90%;
+    height:50%;
+    margin left:60%;
+}
+.loginDes{
+    position:relative;
+    width:70%;
+    height:20%;
+    margin-top:5%;
+    margin-left:15%;
+}
+#FBlink{
+    position:relative;
+    width:90%;
+    height:20%;
+    margin-top:10%;
+}
