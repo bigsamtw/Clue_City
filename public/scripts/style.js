@@ -14,8 +14,9 @@ $(document).ready(function () {
             url  : '/upload',
             type : 'post',
             data: formData,
+            
             success: function (data) {
-                $('h1#upload_response').text(data.body);
+                $('#upload_response').html(data);
             },
             cache: false,
             contentType: false,

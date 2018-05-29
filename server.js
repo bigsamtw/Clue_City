@@ -84,8 +84,7 @@ function runPython(res) {
   var process = spawn('python3', ["./compare.py",]);
   process.stdout.on('data', function (data) {
     console.log(data.toString());
-    res.set('body','Image has been uploaded./n')
-    res.set('body', data.toString())
+    res.send(data.toString());
   })
 }
 
@@ -99,7 +98,7 @@ function parseFile(req, res, callback) {
     body += chunk;
   });
 
-  req.on('end', function () {
+  req.on('end', function() {
     var file = querystring.parse(body, '\r\n', ':')
 
     // 只处理图片文件
