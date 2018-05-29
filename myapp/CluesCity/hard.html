@@ -1,0 +1,181 @@
+
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>hard</title> 
+        <style media="screen">
+          #fb-btn{margin-top: 20px;}
+          #logout{display: none}
+        </style>
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+        </script>
+        
+    </head>
+    <body>
+
+        <script>
+
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '177842309598524',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v3.0'
+              });
+                          
+              FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+              });
+                          
+            };
+                    
+            (function(d, s, id){
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) {return;}
+              js = d.createElement(s); js.id = id;
+              js.src = "https://connect.facebook.net/en_US/sdk.js";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          
+           function statusChangeCallback(response){
+             if( response.status === 'connected' ){
+               console.log( 'Logged in and authenticated' );
+              setElements(true);
+              getProfile();
+             } else {
+              console.log( 'Not authenticated' );
+              setElements(false);
+             }
+           }
+          
+          
+          function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+          }
+          
+          function setElements(isLogin){
+            if(isLogin){}else{}
+          }
+          
+          function gotosetting(){
+            document.location.href="https://luffy.ee.ncku.edu.tw:10047/setting";
+          }
+
+          function gotoaddfriend(){
+            document.location.href="https://luffy.ee.ncku.edu.tw:10047/friend";
+          }
+
+          var responseData ;
+
+          function getProfile(){
+            FB.api('/me?fields=name,email',function(response){
+              if(response && !response.error){
+                console.log("has get profile");
+              }
+              responseData = response ;
+              PassToMain(responseData);
+            })
+          }
+
+          function PassToMain(Data)
+          {
+            console.log(Data);
+            $.ajax({
+              method : 'post',
+              url: './hard/hard',
+              data:Data,
+              success: function(data){
+                $('#name').text(data);
+              }
+            });
+          }
+          
+          var waitsignal = setInterval(signal , 1000);
+          var invite_info = 0;
+          var answer ;
+
+          function signal(){
+            $.ajax ({
+              type : 'post',
+              url : './friend/signal',
+              data : {},
+              success : function(data){
+                if( data == "" || data == null){
+                  console.log("listen whether has invitation");
+                }else{
+                  console.log("someone send me invitation");
+                  invite_info = data ;
+                  join();
+                  clearInterval(waitsignal);
+                }
+              }
+            });
+          }
+
+          function join(){
+            var r = confirm(`是否要加入 ${invite_info} ?`);
+            if( r == true ){
+              answer = "1" ;
+              PassTocheck(invite_info , answer);
+            }
+            else{
+              answer = "0" ;
+              PassTocheck(invite_info , answer);
+            }
+          }
+          
+          function PassTocheck(Data , yes_no)
+          {
+            //console.log(Data);
+            let sender = Data.sender;
+            let inviteto = Data.to;
+            let accept = yes_no ;
+
+            $.ajax({
+              method : 'post',
+              url: './hard/check',
+              data:{
+                checkinvite : {
+                  sender : sender ,
+                  to : inviteto,
+                  accept : accept
+                }
+              }
+            });
+          }
+          
+          /*
+          var person = 0 ;
+          var difficulty = 0 ;
+          // choose person
+          for(var i = 2 ; i < 10 ; i+=2){
+            $(`${i}`).click(function(){
+              person = i ;
+            })
+          }
+          $('#1').click(function(){
+              person = 1 ;
+          })
+          // choose difficulty
+          for(var i = 1 ; i < 4 ; i++){
+            $(`${i}`).click(function(){
+              difficulty = i ;
+            })
+          }
+          */
+          
+          </script>
+          <h1 id="name"></h1>
+          <a>trytry</a>
+          <button id="setting" onclick="gotosetting()">set</button>
+          <button id="addfriend" onclick="gotoaddfriend()">Start</button>
+
+    </body>
+</html>
