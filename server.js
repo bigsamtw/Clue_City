@@ -84,7 +84,7 @@ function runPython(res) {
   var process = spawn('python3', ["./compare.py",]);
   process.stdout.on('data', function (data) {
     console.log(data.toString());
-    //res.send(data.toString());
+    res.send(data.toString());
     return data.toString();
   })
 }
