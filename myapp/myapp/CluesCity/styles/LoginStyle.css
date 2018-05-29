@@ -1,0 +1,31 @@
+#background{
+    position:absolute;
+    z-index:-1;
+    width: 100%;
+    left:0px;
+    top:0px;
+}
+.login{
+    margin-left:0%;
+    margin-top:0%;
+}   
+#ClueCity{
+    width: 90%;
+    height:30%;
+    margin-top:10%;
+    margin-left:5%;
+}
+.loginDes{
+    position:relative;
+    width:70%;
+    height:10%;
+    margin-top:5%;
+    margin-left:15%;
+}
+#FBlink{
+    position:relative;
+    width:80%;
+    height:10%;
+    margin-top:20%;
+    margin-left:10%;
+}

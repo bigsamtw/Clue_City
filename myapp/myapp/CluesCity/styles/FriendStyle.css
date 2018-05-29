@@ -1,0 +1,116 @@
+body{
+    overflow: hidden;
+}
+#TeamBackground{
+    position:absolute;
+    z-index:-1;
+    width: 100%;
+    left:0px;
+    top:0px;
+}
+.team{
+    
+}
+.topbar{
+    position:absolute;
+    left:0px;
+    top: 0px;
+    background-color:#4c4b4b;
+}
+#WhiteBack{
+    position:relative;
+    width:7%;
+    margin-top:1%;
+    margin-left:3%;
+    margin-bottom:1%;
+}
+#AdhocMode{
+    position:relative;
+    margin-left:0%;
+    width:75%;
+}
+#Wheel{
+    position:relative;
+    width:6%;
+    margin-top:4%;
+    margin-bottom:2%;
+    margin-left:4%;
+}
+.FriendsIn{
+    margin-top:50%;
+    margin-left:14%;
+}
+.FriendHead{
+    width:10%;
+}
+.FriendsOnline{
+    position:relative;
+    display:flex;
+    background:white;
+    width:74%;
+    margin-left:14%;
+}
+.Online{
+    position:relative;
+    font-family: Microsoft JhengHei;
+    font-weight:600;
+    font-size:2.2vw;
+}
+#Friendonline{
+    position:relative;
+    font-family: Microsoft JhengHei;
+    font-weight:900;
+    font-size:3.4vw;
+    margin-top:4%;
+    margin-left:3%;
+}
+#OnlineList{
+    display:flex;
+    background-color:white;
+    margin-top:5%;
+    margin-left:4%;
+}
+#Plus{
+    position:relative;
+    width:6%;
+    height:6%;
+    margin-left:26%;
+    margin-top:4%;
+    margin-right:0%;
+}
+.FriendList{
+    width:74vw;
+    height:70vw;
+    position:relative;
+    overflow:auto;
+    margin-left:14%;
+    background-color:white;
+}
+.OnlineDot{
+    width:4%;
+}
+.Invite{
+    position:absolute;
+    right:0px;
+    width:20%;
+}
+#StartGame{
+    position:relative;
+    margin-left:12%;
+}
+#StartGameIcon{
+    width: 89%;
+}
+#Bottom{
+    position:absolute;
+    background-color:#c4dcc9;
+    bottom:0px;
+    left:0px;
+}
+.BottomIcon{
+    width:7%;
+    margin-left:8.5%;
+    margin-right:8.5%;
+    margin-top:2%;
+    margin-bottom:2%;
+}

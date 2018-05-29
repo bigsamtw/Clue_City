@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Clue City</title>
+  <link rel="stylesheet" type="text/css" href="styles/FriendStyle.css">
+  <link rel="stylesheet" type="text/css" href="semantic/out/semantic.min.css">
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-title" content="Clue City">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+       crossorigin="anonymous">
+    </script>
+</head>
+    <script>
+    $(document).ready(function(){
+       $(".Invite").click(function(){
+           this.src="images/Team/invited.png";
+       });
+        $(".Plus").click(function(){
+            
+        })
+    });
+    </script>
+<body>
+        <script>
+
+                window.fbAsyncInit = function() {
+                    FB.init({
+                      appId      : '177842309598524',
+                      cookie     : true,
+                      xfbml      : true,
+                      version    : 'v3.0'
+                    });
+                      
+                    FB.getLoginStatus(function(response) {
+                    statusChangeCallback(response);
+                  });               
+                };
+                
+                  (function(d, s, id){
+                     var js, fjs = d.getElementsByTagName(s)[0];
+                     if (d.getElementById(id)) {return;}
+                     js = d.createElement(s); js.id = id;
+                     js.src = "https://connect.facebook.net/en_US/sdk.js";
+                     fjs.parentNode.insertBefore(js, fjs);
+                   }(document, 'script', 'facebook-jssdk'));
+              
+              
+                
+               function statusChangeCallback(response){
+                 if( response.status === 'connected' ){
+                   console.log( 'Logged in and authenticated' );
+                   setElements(true); 
+                   getProfile();
+                 } else {
+                  console.log( 'Not authenticated' );
+                  setElements(false);
+                 }
+               }
+              
+              
+              function checkLoginState() {
+                FB.getLoginStatus(function(response) {
+                  statusChangeCallback(response);
+                });
+              }
+              
+              function setElements(isLogin){
+                if(isLogin){}else{}
+              }
+              
+              function gotoabout_us(){
+                document.location.href="https://luffy.ee.ncku.edu.tw:10047/profile";
+              }
+      
+              var responseData  ;
+      
+              function getProfile(){
+                FB.api('/me?fields=name,email',function(response){
+                  if(response && !response.error){
+                    responseData = response ;
+                  }
+                })
+              }
+      
+              function friend1(){
+                console.log(12344444);
+                let sendto = {"id":"1854028224617790"}; //致賢
+                invite(sendto);
+              }       
+              function friend2(){
+                let sendto = {"id":"2039314459655494"}; //jack
+                invite(sendto);         
+              }       
+              function friend3(){
+                let sendto = {"id":"2054568394572464"}; //仕翰
+                invite(sendto);         
+              }       
+              function friend4(){
+                let sendto = {"id":"994408210718019"}; //志嘉
+                invite(sendto);         
+              }       
+      
+      
+              function invite(sendto){
+                let sender =  responseData ;
+                let inviteto = sendto.id ;
+                $.ajax ({
+                  type : 'post',
+                  url : './friend/invite',
+                  data : {
+                      sender : sender.id,
+                      to : inviteto,
+                  }
+                });
+              }
+      
+              function passtodatabase(){
+                  $.ajax({
+                      type: 'post',
+                      url: './friend/team',
+                      data:{
+                        team_id : $("input[name='team_id']").val(),
+                        leader  : responseData.id,
+                      }
+                  });
+              }
+              
+              
+              var waitsignal = setInterval(checkresponse , 1000);
+              var be_invited = 0;
+              var invite_info = 0;
+              var answer ;
+      
+              function checkresponse(){
+      
+                  $.ajax ({
+                    type : 'post',
+                    url : './friend/checkresponse',
+                    data : {},
+                    success : function(data){
+                      if( data == "" || data==null){}
+                      else{
+                        invite_info = data ;
+                        if( invite_info.checkinvite.accept == "1" ){
+                          join( invite_info.checkinvite.to);
+                        }
+                      }
+                    }
+                });
+              }
+      
+            function join(teammate){
+              $.ajax({
+                method : 'post',
+                url : './friend/teammate',
+                data : {
+                  "id" : teammate
+                },
+              });
+            } 
+      
+            function gaming(){
+              document.location.href="#"; //待補上
+            } 
+              
+          </script>
+    <img src="images/Team/Background.png" id="TeamBackground">
+    <div class="team">
+        <div class="topbar">
+            <img src="images/Team/WhiteBack.png" id="WhiteBack">
+            <img src="images/Team/adhoc mode.png" class="TopBarMid" id="AdhocMode">
+            <img src="images/Team/wheel.png" class="TopBarWheel" id="Wheel">
+        </div>
+        <div class="FriendsIn">
+            <img src="images/Team/Blankhead.png" class="FriendHead" id="FriendHead1">
+            <img src="images/Team/Blankhead.png" class="FriendHead" id="FriendHead2">
+            <img src="images/Team/Blankhead.png" class="FriendHead" id="FriendHead3">
+            <img src="images/Team/lisa.jpg"      class="FriendHead" id="FriendHead4">
+            <img src="images/Team/Blankhead.png" class="FriendHead" id="FriendHead5">
+            <img src="images/Team/Blankhead.png" class="FriendHead" id="FriendHead6">
+            <img src="images/Team/Blankhead.png" class="FriendHead" id="FriendHead7">
+            <img src="images/Team/Blankhead.png" class="FriendHead" id="FriendHead8">
+        </div>
+        <div class="FriendsOnline">
+            <p id="Friendonline">MY FRIENDS</p>
+            <div id="OnlineList">
+                <p class="Online" id="FriendNum">好友在線(</p>
+                <p class="Online" id="OnlineNum">12</p>
+                <p class="Online" id="Dash">/</p>
+                <p class="Online" id="TotalNum">125</p>
+                <p class="Online" id="RightQuat">)</p>
+            </div>
+            <img src="images/Team/Plus.png" id="Plus">
+        </div>
+        <div class="FriendList">
+            <div class="ui middle aligned selection list">
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/greendot.png">
+                    <img class="ui avatar image" src="images/Team/Glen.jpg" >
+                    <div class="content">
+                        <div class="header">Glen</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png"  onclick = "friend1()">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/graydot.png">
+                    <img class="ui avatar image" src="images/Team/Wang.jpg">
+                    <div class="content">
+                        <div class="header">KennyWang</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/greendot.png">
+                    <img class="ui avatar image" src="images/Team/HsiHan.jpg">
+                    <div class="content">
+                        <div class="header">Han Chen</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png" onclick = "friend3()">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/graydot.png">
+                    <img class="ui avatar image" src="images/Team/Chia.jpg">
+                    <div class="content">
+                        <div class="header">Chia Lin</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/greendot.png">
+                    <img class="ui avatar image" src="images/Team/Andy.jpg">
+                    <div class="content">
+                        <div class="header">Andy Shih</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/greendot.png">
+                    <img class="ui avatar image" src="images/Team/Lewis.jpg">
+                    <div class="content">
+                        <div class="header">Luwis</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/greendot.png">
+                    <img class="ui avatar image" src="images/Team/HsiHan.jpg">
+                    <div class="content">
+                        <div class="header">Han Chen</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/greendot.png">
+                    <img class="ui avatar image" src="images/Team/HsiHan.jpg">
+                    <div class="content">
+                        <div class="header">Han Chen</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png">
+                </div>
+                <div class="item">
+                    <img class="OnlineDot" src="images/Team/greendot.png">
+                    <img class="ui avatar image" src="images/Team/HsiHan.jpg">
+                    <div class="content">
+                        <div class="header">Han Chen</div>
+                    </div>
+                    <img class="Invite" src="images/Team/invite.png">
+                </div>
+            </div>
+        </div>
+        <div id="StartGame">
+                <img src="images/Team/StartTheGame.png" id="StartGameIcon" onclick = "gaming()">
+        </div>
+        <div id="Bottom">
+                <img src="images/Mode/home icon.png" class="BottomIcon" id="HomeIcon">
+                <img src="images/Mode/gallery icon.png" class="BottomIcon" id="GalleryIcon">
+                <img src="images/Mode/group icon.png" class="BottomIcon" id="GroupIcon">
+                <img src="images/Mode/leaderboard icon.png" class="BottomIcon" id="RankIcon">
+        </div>
+        <!--
+        team ID: <input type="text" name = "team_id"><br>
+      <button type = "submit" onclick = "passtodatabase()">OK</button-->
+    </div>
+    
+</body>
