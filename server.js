@@ -85,7 +85,7 @@ function runPython(res) {
   process.stdout.on('data', function (data) {
     console.log(data.toString());
     res.send(data.toString());
-    return data.toString();
+    //return data.toString();
   })
 }
 
